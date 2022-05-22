@@ -7,5 +7,5 @@
     },
     "trace": true,
     "type": "e2e",
-    "virtualDeviceToken": "${VIRTUAL_DEVICE_TOKEN}"
+    "virtualDeviceToken": "alexa-ed784fd1-5266-4563-9d70-b037d3cdbe2d"
 }
