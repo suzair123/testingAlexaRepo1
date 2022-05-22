@@ -7,5 +7,6 @@
     },
     "trace": true,
     "type": "e2e",
-    "virtualDeviceToken": "alexa-ed784fd1-5266-4563-9d70-b037d3cdbe2d"
+    "virtualDeviceToken": "alexa-ed784fd1-5266-4563-9d70-b037d3cdbe2d",
+	"DATADOG_API_KEY":"f6cfae955981bea0a0af42a4394dbb07"
 }
