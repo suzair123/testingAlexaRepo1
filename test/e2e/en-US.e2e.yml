@@ -1,0 +1,23 @@
+
+# This .yml file represents a test suite containing different tests for the 
+# Bespoken overview Alexa skill. Feel free to download this repository and 
+# play with these tests as you like.
+
+
+# The configuration section overrides configurations found in the testing.json 
+# file. Here, we've configured the locale and voice we want to use.
+---
+configuration:
+  description: Bespoken Overview
+  locale: en-US
+  voiceId: en-US-Wavenet-D
+
+# Our first test launches the skill and does an assertion on the the prompt that 
+# comes back from the skill. The stop utterance is sent to close the skill session.
+---
+- test : Launch skill - close session
+- open bespoken overview : Welcome to bespoken overview
+- what is unit testing : 
+    - prompt: Test and debug locally without deployments
+    - "raw.messageBody.directives[0].namespace" : SpeechRecognizer
+- stop: Goodbye

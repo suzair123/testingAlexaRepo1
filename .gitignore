@@ -1,0 +1,14 @@
+# Logs
+logs
+*.log
+
+# Dependency directories
+node_modules/
+
+# dotenv environment variables file
+.env
+
+# Output reports
+test_output
+
+.DS_Store

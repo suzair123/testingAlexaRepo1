@@ -1,0 +1,60 @@
+# #  Este archivo .yml representa un test suite que contiene diversos tests para
+# # el skill de Alexa "Vistazo a Bespoken". Siéntete libre de descargar este repositorio
+# # y jugar con estos tests tanto como quieras.
+
+# # La sección de configuración sobreescribe las configuraciones dentro del archivo 
+# # testing.json. Aquí, hemos cambiado el idioma y voz que queremos usar.
+
+---
+configuration:
+  description: Bespoken Overview
+  locale: es-ES
+  voiceId: es-ES-Wavenet-B
+
+# Nuestro primer test abre el skill y hace una prueba sobre el mensaje
+# que devuelve el skill. "Parar" es incluido para forzar el fin de la sesión.
+---
+- test : Abrir skill - terminar la sesión
+- abre vistazo a bespoken : Bienvenidos al vistazo a Bespoken
+- parar: 
+  - caption: Hasta!
+
+# # El segundo test abre el skill y pregunta por una de las opciones disponibles
+# ---
+# - test : Preguntar por pruebas unitarias
+# - abre vistazo a bespoken : Bienvenidos al vistazo a Bespoken
+# - háblame de pruebas unitarias : Prueba y depura localmente sin despliegues
+# - parar
+
+# # Validar una opción que tiene múltiples diversas respuestas.
+# ---
+# - test : Preguntar por pruebas punto a punto con multiples respuestas
+# - abre vistazo a bespoken : Bienvenidos al vistazo a Bespoken
+# - háblame de pruebas punto a punto : 
+#   - prompt: 
+#     - Haz que tu equipo sea 10X más productivo
+#     - Enviamos audio real a los servicios de Alexa o Google
+#     - Probar el sistema como un todo
+# - parar
+
+# # Uso de JSONPath para evaluar el contenido de las directivas
+# --- 
+# - test : Preguntar por pruebas unitarias + imágenes de APL
+# - abre vistazo a bespoken : 
+#   - prompt: Bienvenidos al vistazo a Bespoken
+# - háblame de pruebas unitarias : 
+#   - prompt: Prueba y depura localmente sin despliegues
+#   - raw.messageBody.directives[3].namespace : Alexa.Presentation.APL
+#   - raw.messageBody.directives[3].payload.datasources.data.properties.itemImg: unit-testing-500x500.png
+# - parar
+
+# # Uso de audio pregrabado, como alternativa al text-to-speech.
+# ---
+# - test: Pruebas unitarias - audio pregrabado
+# - https://bespoken-overview-skill.s3.amazonaws.com/abre+vistazo+a+bespoken.mp3 :
+#   - prompt: Bienvenidos al vistazo a Bespoken
+# - https://bespoken-overview-skill.s3.amazonaws.com/ha%CC%81blame+de+pruebas+unitarias.mp3 :
+#   - prompt: Prueba y depura localmente sin despliegues
+# - parar
+
+

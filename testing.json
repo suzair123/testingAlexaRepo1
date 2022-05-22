@@ -1,0 +1,11 @@
+{
+    "filter": "./node_modules/bespoken-datadog-plugin/index.js",
+    "asyncMode": true,
+    "homophones": {
+        "test and debug": ["testing debug"],
+        "Justin deberg": ["testing debug"]
+    },
+    "trace": true,
+    "type": "e2e",
+    "virtualDeviceToken": "${VIRTUAL_DEVICE_TOKEN}"
+}
