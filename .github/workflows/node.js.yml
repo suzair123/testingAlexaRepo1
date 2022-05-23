@@ -10,7 +10,7 @@ on:
 #     branches: [ master ]
 
 env:
-  DATADOG_API_KEY: ${{ secrets.DATADOG_API_KEY }}
+  DATADOG_API_KEY: f6cfae955981bea0a0af42a4394dbb07
   DATADOG_CUSTOMER: ${{ secrets.DATADOG_CUSTOMER }}
   VIRTUAL_DEVICE_TOKEN: ${{ secrets.VIRTUAL_DEVICE_TOKEN }}
   
